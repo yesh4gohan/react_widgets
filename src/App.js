@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import "./App.css";
+import CustomModal from "./components/custom_modal";
+import { useModal } from "./components/custom_modal/useModal";
+const App = () => {
+  const { show, openModal, closeModal } = useModal();
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button onClick={openModal}>Click</button>
+      <CustomModal
+        show={show}
+        heading={"Title"}
+        desc={"This is just a dummy description of a random modal"}
+        yesCallback={() => {
+          alert("Yes callback");
+          closeModal()
+        }}
+        noCallback={() => {
+          alert("No callback");
+          closeModal()
+        }}
+      >
+        This is a place holder here we can send any custom component
+      </CustomModal>
     </div>
   );
-}
-
+};
 export default App;
