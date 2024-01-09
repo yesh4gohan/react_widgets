@@ -1,0 +1,10 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    column-gap: 20px;
+    align-items: center;
+}
+.btns-container {
+    display: flex;
+    row-gap: 10px;
+}

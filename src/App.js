@@ -1,11 +1,12 @@
 import "./App.css";
-import CustomModal from "./components/custom_modal";
-import { useModal } from "./components/custom_modal/useModal";
+// import CustomModal from "./components/custom_modal";
+// import { useModal } from "./components/custom_modal/useModal";
+import Counter from "./components/counter";
 const App = () => {
-  const { show, openModal, closeModal } = useModal();
+  // const { show, openModal, closeModal } = useModal();
   return (
     <div className="App">
-      <button onClick={openModal}>Click</button>
+      {/* <button onClick={openModal}>Click</button>
       <CustomModal
         show={show}
         heading={"Title"}
@@ -20,7 +21,8 @@ const App = () => {
         }}
       >
         This is a place holder here we can send any custom component
-      </CustomModal>
+      </CustomModal> */}
+      <Counter/>
     </div>
   );
 };
